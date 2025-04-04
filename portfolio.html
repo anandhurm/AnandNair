@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Anand Nair</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    /* Global Reset & Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #f4f4f9;
+      color: #333;
+      line-height: 1.6;
+    }
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    h1, h2, h3 {
+      margin-bottom: 20px;
+    }
+    
+    /* Header */
+    header {
+      background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+      color: #fff;
+      padding: 20px 0;
+    }
+    header .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+    header h1 {
+      font-size: 2rem;
+      font-weight: 600;
+    }
+    nav ul {
+      display: flex;
+      list-style: none;
+    }
+    nav ul li {
+      margin-left: 20px;
+    }
+    nav ul li a {
+      font-size: 1rem;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+    nav ul li a:hover {
+      color: #f0f0f0;
+    }
+    
+    /* Section Headings */
+    section h2 {
+      font-size: 2rem;
+      text-align: center;
+      margin-bottom: 20px;
+      padding-bottom: 10px;
+      position: relative;
+    }
+    section h2::after {
+      content: '';
+      width: 60px;
+      height: 3px;
+      background: #2575fc;
+      display: block;
+      margin: 10px auto 0;
+      border-radius: 5px;
+    }
+    
+    /* About Section */
+    #about {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 40px;
+      padding: 60px 0;
+    }
+    #about img {
+      width: 250px;
+      height: 250px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 5px solid #2575fc;
+    }
+    .about-content {
+      flex: 1;
+      text-align: left;
+    }
+    .about-content p {
+      margin-bottom: 15px;
+      font-size: 1.1rem;
+    }
+    
+    /* Research Section */
+    #research {
+      background: #fff;
+      padding: 60px 20px;
+    }
+    #research .research-content {
+      display: flex;
+      justify-content: space-between;
+      gap: 40px;
+      flex-wrap: wrap;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    #research .research-column {
+      flex: 1;
+      min-width: 300px;
+    }
+    #research .research-column h3 {
+      font-size: 1.5rem;
+      margin-bottom: 15px;
+      color: #2575fc;
+    }
+    #research ul {
+      list-style: disc;
+      margin-left: 20px;
+    }
+    #research ul li {
+      margin-bottom: 10px;
+      font-size: 1.1rem;
+      line-height: 1.5;
+    }
+    
+    /* Projects Section */
+    #projects {
+      background: #fff;
+      padding: 60px 20px;
+    }
+    .projects-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+    .project-card {
+      background: #f9f9f9;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .project-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    }
+    .project-card h3 {
+      margin-bottom: 10px;
+      font-size: 1.2rem;
+      color: #2575fc;
+    }
+    .project-card p {
+      font-size: 0.95rem;
+      color: #555;
+    }
+    
+    /* Resume Section */
+    #resume {
+      text-align: center;
+      padding: 60px 20px;
+    }
+    #resume p {
+      font-size: 1.1rem;
+      margin-bottom: 20px;
+    }
+    .btn {
+      display: inline-block;
+      background: #2575fc;
+      color: #fff;
+      padding: 12px 30px;
+      border-radius: 30px;
+      font-size: 1rem;
+      font-weight: 500;
+      transition: background 0.3s, transform 0.3s;
+    }
+    .btn:hover {
+      background: #1a5fcc;
+      transform: translateY(-3px);
+    }
+    
+    /* Contact Section */
+    #contact {
+      background: #fff;
+      text-align: center;
+      padding: 60px 20px;
+    }
+    #contact p {
+      font-size: 1.1rem;
+      margin-bottom: 10px;
+    }
+    #contact a {
+      color: #2575fc;
+      font-weight: 600;
+      transition: color 0.3s;
+    }
+    #contact a:hover {
+      color: #1a5fcc;
+    }
+    
+    /* Footer */
+    footer {
+      background: #222;
+      color: #fff;
+      text-align: center;
+      padding: 15px 20px;
+      font-size: 0.9rem;
+    }
+    
+    /* Responsive Styles */
+    @media (max-width: 768px) {
+      header .container {
+        flex-direction: column;
+        text-align: center;
+      }
+      nav ul {
+        margin-top: 10px;
+        justify-content: center;
+      }
+      #about {
+        flex-direction: column;
+        text-align: center;
+      }
+      #about img {
+        margin: 0 auto;
+      }
+      #research .research-content {
+        flex-direction: column;
+        align-items: center;
+      }
+      #research .research-column {
+        margin-bottom: 30px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="container">
+      <h1>Anandhu's Portfolio</h1>
+      <nav>
+        <ul>
+          <li><a href="#about">About Me</a></li>
+          <li><a href="#research">Research</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#resume">Resume</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  
+  <!-- About Section -->
+  <section id="about" class="container">
+    <img src="photo.jpg" alt="Anandhu Photo">
+    <div class="about-content">
+      <h2>About Me</h2>
+      <p>Hello, I'm Anand – a passionate Computer Engineering student with a strong foundation in physics and mathematics from the University of Nebraska-Lincoln. I thrive at the intersection of technology and research, working on innovative projects ranging from cosmic ray analysis to quantum simulation and advanced data processing.</p>
+      <p>My hands-on experience in research has shaped my technical expertise and creative problem-solving skills. I continually pursue opportunities that bridge academic research with real-world applications.</p>
+      <p>Beyond my passion for science and engineering, I am deeply inspired by portrait painting. I love exploring the nuances of human expression through art, drawing inspiration from masters like Gerhard Richter, Cecily Brown, and Takashi Murakami. My favorite artwork, <em>Master of Photorealism</em>, embodies the delicate balance between realism and creative expression that fuels my artistic side.</p>
+    </div>
+  </section>
+  
+  <!-- Research Section -->
+  <section id="research">
+    <div class="container">
+      <h2>Research</h2>
+      <div class="research-content">
+        <div class="research-column">
+          <h3>Research Experiences</h3>
+          <ul>
+            <li><strong>Cosmic Ray Observatory Project:</strong> Installed detectors and analyzed cosmic ray air showers at the University of Nebraska-Lincoln.</li>
+            <li><strong>Yao Labs:</strong> Collected and analyzed Reddit data to study health trends and public sentiment using API integration and sentiment analysis.</li>
+            <li><strong>Fabrikant Labs:</strong> Simulated quantum tunneling effects and developed numerical models using Python and Qiskit to study electron behavior in nanoscale devices.</li>
+          </ul>
+        </div>
+        <div class="research-column">
+          <h3>Research Interests</h3>
+          <ul>
+            <li>Quantum Algorithms</li>
+            <li>Quantum AI</li>
+            <li>Quantum Optimization</li>
+            <li>Programming Languages</li>
+            <li>Compilers</li>
+            <li>Quant Finance</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Projects Section -->
+  <section id="projects">
+    <div class="container">
+      <h2>Projects</h2>
+      <div class="projects-container">
+        <div class="project-card">
+          <h3>LitMiner 2</h3>
+          <p>AI-powered research literature analysis that processes thousands of papers to deliver expert-validated insights rapidly.</p>
+        </div>
+        <div class="project-card">
+          <h3>Galaxy Evolution Study</h3>
+          <p>Analyzed redshift data from JWST to investigate galaxy morphology, star formation rates, and cosmic evolution.</p>
+        </div>
+        <div class="project-card">
+          <h3>Mini Drone-Based Surveillance</h3>
+          <p>Designed a mini drone system with sensor integration and autonomous navigation for effective surveillance and data collection.</p>
+        </div>
+        <div class="project-card">
+          <h3>Academic Claim Analyzer 2</h3>
+          <p>Developed a semantic search engine that processes over 10,000 academic papers to match user queries with precise evidence.</p>
+        </div>
+        <div class="project-card">
+          <h3>LSTM-Jupyter Notebook</h3>
+          <p>Engineered an LSTM neural network for precision irrigation scheduling by integrating meteorological and soil data.</p>
+        </div>
+        <div class="project-card">
+          <h3>LLM Orchestrator 2</h3>
+          <p>Created an asynchronous Python interface for managing multiple LLM APIs, streamlining AI model integration.</p>
+        </div>
+        <div class="project-card">
+          <h3>Log Gantry Repository 2</h3>
+          <p>Designed a Python-based GUI for a log scanner with integrated data processing and simulation features.</p>
+        </div>
+        <div class="project-card">
+          <h3>Coin Picking Robot 2</h3>
+          <p>Developed an autonomous and remote-controlled coin picking robot using microcontrollers and wireless communication.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Resume Section -->
+  <section id="resume">
+    <div class="container">
+      <h2>Resume</h2>
+      <p>For a detailed overview of my education, experience, and projects, please view my resume.</p>
+      <a href="Anand's CV.pdf" target="_blank" class="btn">Download Resume</a>
+    </div>
+  </section>
+  
+  <!-- Contact Section -->
+  <section id="contact">
+    <div class="container">
+      <h2>Contact</h2>
+      <p>If you’d like to connect or learn more about my work, feel free to reach out:</p>
+      <p>Email: <a href="mailto:anair6@huskers.unl.edu">anair6@huskers.unl.edu</a></p>
+      <p>LinkedIn: <a href="https://www.linkedin.com/in/anand-nair-98aa95328/" target="_blank">Anand Nair</a></p>
+      <p>GitHub: <a href="https://github.com/AnandNair3301" target="_blank">AnandNair3301</a></p>
+    </div>
+  </section>
+  
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 Anand. All rights reserved.</p>
+    </div>
+  </footer>
+</body>
+</html>
